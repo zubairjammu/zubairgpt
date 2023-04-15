@@ -1,0 +1,26 @@
+{
+"update_url": "https://clients2.google.com/service/update2/crx",
+
+  "manifest_version": 3,
+  "name": "ZubirGPT Prompts",
+  "version": "0.3.0",
+  "description": "ZubairGPT prompts provide useful prompts for advance and general purpose",
+ 
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "ZubairGPT Prompts"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://chat.openai.com/*"
+      ],
+      "run_at": "document_idle",
+      "js": [
+        "contentScript.js"
+      ]
+    }
+  ]
+}
